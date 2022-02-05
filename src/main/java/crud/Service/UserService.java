@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class UserService {
 
     private DaoImpl userDao;
@@ -30,5 +29,8 @@ public class UserService {
 
     @Transactional
     public void editUser(User updatedUser){userDao.editUser(updatedUser);}
+
+    @Transactional
+    public void deleteUser(Long id){userDao.deleteUser(id);}
 
 }

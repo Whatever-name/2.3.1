@@ -11,6 +11,8 @@ public interface Dao {
 
     User findUser(Long id);
 
+    void deleteUser(Long id);
+
     void editUser(User user);
 
 

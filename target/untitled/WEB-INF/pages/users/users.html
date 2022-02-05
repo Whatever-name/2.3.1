@@ -13,6 +13,7 @@
         <th>Name</th>
         <th>Department</th>
         <th>Edit User</th>
+        <th>Delete User</th>
     </tr>
     <tr th:each="user:${allUsers}">
         <td th:utext="${user.getId()}" ></td>
@@ -21,8 +22,10 @@
         <td th:utext="${user.getDepartment()}"></td>
         <td> <form th:method="GET" th:action="@{/users/edit/{id}(id=${user.getId()})}">
         <input type="submit" value="edit person">
-    </form>
-        </td>
+    </form> </td>
+        <td> <form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
+            <input type="submit" value="delete">
+        </form> </td>
     </tr>
 </table>
 <br><br>
